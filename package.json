@@ -1,0 +1,28 @@
+{
+  "name": "address-cn.js",
+  "version": "1.0.0",
+  "description": "一个用来从身份证住址中获取省市区县等信息的插件。",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenhailun2006/address-cn.js.git"
+  },
+  "keywords": [
+    "address",
+    "javascript",
+    "province",
+    "city",
+    "county",
+    "china",
+    "split address"
+  ],
+  "author": "Allen Chen",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^3.2.0",
+    "prettier": "^1.14.2"
+  }
+}
