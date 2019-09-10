@@ -1,6 +1,6 @@
 {
   "name": "address-cn.js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "一个用来从身份证住址中获取省市区县等信息的插件。",
   "main": "index.js",
   "scripts": {

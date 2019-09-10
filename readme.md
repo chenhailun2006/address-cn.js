@@ -6,39 +6,32 @@
 ```
 npm install --save address-cn.js
 ```
+
+或
+
+```
+yarn add address-cn.js
+```
+
 ### 用法
 ```javascript
 const address = require('address-cn.js');
 
-const str = '山东省菏泽市巨野县';
-console.log(address(str)); // {provinceLevel: '山东省', cityLevel: '菏泽市', countyLevel: '巨野县'}
+const str = '山东省菏泽市巨野县万丰镇陈集村';
+console.log(address(str)); // {province: '山东省', city: '菏泽市', district: undefined, county: '巨野县', town: '万丰镇', others: '陈集村'}
 
-const str2 = '上海市黄浦区';
-console.log(address(str2)); // {provinceLevel: '上海市', cityLevel: null, countyLevel: '黄浦区'}
+const str2 = '上海市浦东新区东方金融广场';
+console.log(address(str2)); // {province: '上海市', city: '上海市', district: '浦东新区', county: undefined, town: undefined, others: '东方金融广场'}
 
-const str3 = '新疆乌鲁木齐市沙依巴克区';
-console.log(address(str3)); // {provinceLevel: '新疆', cityLevel: '乌鲁木齐市', countyLevel: '沙依巴克区'}
+const str3 = '新疆乌鲁木齐市沙依巴克区奇台路657号';
+console.log(address(str3)); // {province: '新疆', city: '乌鲁木齐市', district: '沙依巴克区', county: undefined, town: undefined, others: '奇台路657号'}
+
+const str4 = '新疆乌鲁木齐市昌吉回族自治州呼图壁县乌伊东路79号';
+console.log(address(str4)); // {province: '新疆', city: '乌鲁木齐市', district: '昌吉回族自治州', county: '呼图壁县', town: undefined, others: '乌伊东路79号'}
 ```
-**address** 方法还可以接收第二个参数，该参数是一个枚举值，可选值为'default', 'show'和'hide'，用于指定是否显示级别信息，其默认值为'default'，即显示级别信息，设置为'hide'，则不显示级别信息。对于五个自治区，第二个参数的值为'default'或'show'时,会有一定的区别，当值为'show'时，对于五个自治区将会显示‘xx自治区’，而值为'default'时，对于五个自治区，只会显示名字，不会携带“自治区”字符串，对于其他的省份或直辖市，当showLevel为‘default’或‘show’时是没有任何区别的。
+### 特别说明
 
-```javascript
-const address = require('address-cn.js');
+`V2.x`版本与`V1.x`版本不兼容。
 
-const str = '山东省菏泽市巨野县';
-console.log(address(str, 'hide')); // {provinceLevel: '山东', cityLevel: '菏泽', countyLevel: '巨野'}
-
-const str2 = '上海市黄浦区';
-console.log(address(str2, 'hide')); // {provinceLevel: '上海', cityLevel: null, countyLevel: '黄埔'}
-
-const str3 = '新疆乌鲁木齐市沙依巴克区';
-console.log(address(str3, 'hide')); // {provinceLevel: '新疆', cityLevel: '乌鲁木齐', countyLevel: '沙依巴克'}
-```
-
-```javascript
-const address = require('address-cn.js');
-
-const str = '新疆乌鲁木齐市沙依巴克区';
-console.log(address(str3, 'show')); // {provinceLevel: '新疆自治区', cityLevel: '乌鲁木齐市', countyLevel: '沙依巴克区'}
-console.log(address(str3, 'default')); // {provinceLevel: '新疆', cityLevel: '乌鲁木齐市', countyLevel: '沙依巴克区'}
-console.log(address(str3, 'hide')); // {provinceLevel: '新疆', cityLevel: '乌鲁木齐', countyLevel: '沙依巴克'}
-```
+### LICENSE
+[MIT](./LICENSE)

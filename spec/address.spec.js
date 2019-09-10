@@ -38,7 +38,7 @@ describe('测试直辖市', () => {
 describe('测试自治区', () => {
   let addr;
   beforeEach(() => {
-    addr = '新疆乌鲁木齐市昌吉回族自治州';
+    addr = '新疆乌鲁木齐市昌吉回族自治州呼图壁县乌伊东路79号';
   });
   it('should return correct data', () => {
     const result = address(addr);
@@ -46,9 +46,9 @@ describe('测试自治区', () => {
       province: '新疆',
       city: '乌鲁木齐市',
       district: '昌吉回族自治州',
-      county: undefined,
+      county: '呼图壁县',
       town: undefined,
-      others: undefined,
+      others: '乌伊东路79号',
     });
   });
 });
